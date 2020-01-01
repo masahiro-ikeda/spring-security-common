@@ -1,10 +1,10 @@
 group = 'com.sample.common'
 
 dependencies {
-    compileOnly 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'mysql:mysql-connector-java:5.1.47'
+    runtime 'com.h2database:h2:1.4.197'
 }
 
 // MainClassの設定なしでjarビルドするために必要
