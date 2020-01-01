@@ -16,6 +16,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.sample.common'
 sourceCompatibility = '11'
+targetCompatibility = '11'
 
 repositories {
     mavenCentral()
@@ -23,15 +24,15 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
+    
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'mysql:mysql-connector-java:5.1.47'
+    runtime 'com.h2database:h2:1.4.197'
 }
 
+// MainClassの設定なしでjarビルドするために必要
 bootJar {
     enabled = false
 }
-
 jar {
     enabled = true
 }
