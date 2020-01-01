@@ -6,11 +6,3 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     runtime 'com.h2database:h2:1.4.197'
 }
-
-// MainClassの設定なしでjarビルドするために必要
-bootJar {
-    enabled = false
-}
-jar {
-    enabled = true
-}
