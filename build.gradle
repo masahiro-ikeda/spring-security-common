@@ -1,7 +1,6 @@
 buildscript {
     ext {
         springBootVersion = '2.2.2.RELEASE'
-        tomcatVersion = '9.0.10'
     }
     repositories {
         mavenCentral()
@@ -15,7 +14,7 @@ apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.sample'
+group = 'com.sample.common'
 sourceCompatibility = '11'
 
 repositories {
@@ -24,5 +23,15 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-devtools'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'mysql:mysql-connector-java:5.1.47'
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
 }

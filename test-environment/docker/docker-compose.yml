@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  test-mysql:
+    build: ./mysql/  # Dockerfileを利用
+    ports:
+      - "23306:3306" # ポートを開ける
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_USER=test-user
+      - MYSQL_PASSWORD=test-pass
+      - MYSQL_DATABASE=test
